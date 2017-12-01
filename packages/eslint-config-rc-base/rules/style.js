@@ -97,9 +97,9 @@ module.exports = {
     // require identifiers to match the provided regular expression
     'id-match': 'off',
 
-    // Enforce the location of arrow function bodies with implicit returns
-    // https://eslint.org/docs/rules/implicit-arrow-linebreak
-    'implicit-arrow-linebreak': ['error', 'beside'],
+    // // Enforce the location of arrow function bodies with implicit returns
+    // // https://eslint.org/docs/rules/implicit-arrow-linebreak
+    // 'implicit-arrow-linebreak': ['error', 'beside'],
 
     // this option sets a specific tab width for your code
     // https://eslint.org/docs/rules/indent
