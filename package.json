@@ -1,38 +1,71 @@
 {
-  "name": "rc-javascript",
-  "version": "2.0.0",
-  "description": "A mostly reasonable approach to JavaScript.",
+  "name": "eslint-config-rc-base",
+  "version": "12.1.0",
+  "description": "Airbnb's base JS ESLint config, following our styleguide",
+  "main": "index.js",
   "scripts": {
-    "preinstall": "npm run install:config:base",
-    "install:config:base": "cd packages/eslint-config-rc-base && npm prune && npm install",
-    "lint": "markdownlint --config linters/.markdownlint.json README.md */README.md",
+    "prelint": "editorconfig-tools check * rules/* test/*",
+    "lint": "eslint --report-unused-disable-directives .",
+    "tests-only": "babel-tape-runner ./test/test-*.js",
+    "prepublish": "(in-install || eslint-find-rules --unused) && (not-in-publish || npm test) && safe-publish-latest",
     "pretest": "npm run --silent lint",
-    "test": "npm run --silent test:config && npm run --silent test:config:base",
-    "test:config": "cd packages/eslint-config-airbnb; npm test",
-    "test:config:base": "cd packages/eslint-config-airbnb-base; npm test",
-    "pretravis": "npm run --silent lint",
-    "travis": "npm run --silent travis:config && npm run --silent travis:config:base",
-    "travis:config": "cd packages/eslint-config-airbnb; npm run travis",
-    "travis:config:base": "cd packages/eslint-config-airbnb-base; npm run travis"
+    "test": "npm run --silent tests-only",
+    "pretravis": ":",
+    "travis": "npm run --silent test",
+    "posttravis": ":"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/airbnb/javascript.git"
+    "url": "https://github.com/airbnb/javascript"
   },
   "keywords": [
-    "style guide",
-    "lint",
+    "eslint",
+    "eslintconfig",
+    "config",
     "airbnb",
-    "es6",
-    "es2015"
+    "javascript",
+    "styleguide"
   ],
-  "author": "Harrison Shoff <hi@hshoff.com> (https://twitter.com/hshoff)",
+  "author": "Jake Teton-Landis (https://twitter.com/@jitl)",
+  "contributors": [
+    {
+      "name": "Jake Teton-Landis",
+      "url": "https://twitter.com/jitl"
+    },
+    {
+      "name": "Jordan Harband",
+      "email": "ljharb@gmail.com",
+      "url": "http://ljharb.codes"
+    },
+    {
+      "name": "Harrison Shoff",
+      "url": "https://twitter.com/hshoff"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/airbnb/javascript/issues"
   },
   "homepage": "https://github.com/airbnb/javascript",
   "devDependencies": {
-    "markdownlint-cli": "^0.3.1"
+    "babel-preset-airbnb": "^2.4.0",
+    "babel-tape-runner": "^2.0.1",
+    "editorconfig-tools": "^0.1.1",
+    "eslint": "^4.12.1",
+    "eslint-find-rules": "^3.1.1",
+    "eslint-plugin-import": "^2.8.0",
+    "in-publish": "^2.0.0",
+    "safe-publish-latest": "^1.1.1",
+    "tape": "^4.8.0"
+  },
+  "peerDependencies": {
+    "eslint": "^4.12.1",
+    "eslint-plugin-import": "^2.8.0"
+  },
+  "engines": {
+    "node": ">= 4"
+  },
+  "dependencies": {
+    "eslint-restricted-globals": "^0.1.1"
   }
 }
