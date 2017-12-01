@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-rc-style",
+  "name": "rc-javascript",
   "version": "2.0.0",
   "description": "A mostly reasonable approach to JavaScript.",
   "scripts": {
