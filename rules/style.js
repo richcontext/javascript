@@ -75,7 +75,7 @@ module.exports = {
 
     // require function expressions to have a name
     // https://eslint.org/docs/rules/func-names
-    'func-names': 'warn',
+    // 'func-names': 'warn',
 
     // enforces use of function declarations or expressions
     // https://eslint.org/docs/rules/func-style
@@ -176,7 +176,7 @@ module.exports = {
 
     // specify the maximum length of a line in your program
     // https://eslint.org/docs/rules/max-len
-    'max-len': ['error', 100, 2, {
+    'max-len': ['error', 150, 2, {
       ignoreUrls: true,
       ignoreComments: false,
       ignoreRegExpLiterals: true,
@@ -342,7 +342,7 @@ module.exports = {
     // disallow dangling underscores in identifiers
     'no-underscore-dangle': ['error', {
       allow: [],
-      allowAfterThis: false,
+      allowAfterThis: true,
       allowAfterSuper: false,
       enforceInMethodNames: false,
     }],
@@ -430,11 +430,7 @@ module.exports = {
 
     // require or disallow space before function opening parenthesis
     // https://eslint.org/docs/rules/space-before-function-paren
-    'space-before-function-paren': ['error', {
-      anonymous: 'always',
-      named: 'never',
-      asyncArrow: 'always'
-    }],
+    'space-before-function-paren': 'off',
 
     // require or disallow spaces inside parentheses
     'space-in-parens': ['error', 'never'],
