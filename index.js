@@ -7,29 +7,26 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    'plugin:ember/recommended'
-  ].concat([ './rules/best-practices',
+    'plugin:ember/recommended',
+    './rules/best-practices',
     './rules/errors',
     './rules/node',
     './rules/style',
     './rules/variables',
     './rules/es6',
     './rules/imports',
-  ].map(require.resolve)),
+  ].map(require.resolve),
   parserOptions: {
-    ecmaVersion: 2017,
+    ecmaVersion: 2018,
     sourceType: 'module',
-    ecmaFeatures: {
-      experimentalObjectRestSpread: true,
-    },
   },
   plugins: [
     'ember'
   ],
   env: {
-    'browser': true,
-    'node': true,
-    'es6': true
+    browser: true,
+    node: true,
+    es6: true
   },
   rules: {
     strict: 'error',
