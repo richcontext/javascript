@@ -7,15 +7,15 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    'plugin:ember/recommended',
-    './rules/best-practices',
+    'plugin:ember/recommended'
+  ].concat(['./rules/best-practices',
     './rules/errors',
     './rules/node',
     './rules/style',
     './rules/variables',
     './rules/es6',
     './rules/imports',
-  ].map(require.resolve),
+  ].map(require.resolve)),
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
