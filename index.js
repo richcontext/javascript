@@ -30,8 +30,6 @@ module.exports = {
   },
   rules: {
     strict: 'error',
-    'ember/named-functions-in-promises': [2, {
-      allowSimpleArrowFunction: true,
-    }]
+    'ember/named-functions-in-promises': 'off'
   },
 };
